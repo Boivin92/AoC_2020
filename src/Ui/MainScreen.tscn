@@ -1,0 +1,407 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Ui/MainScreen.gd" type="Script" id=1]
+[ext_resource path="res://Ui/Fonts/Coolvetica/coolvetica rg.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Ui/DayContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Challenges/Day1/day1Solver.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Show"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 2.08, -0.23178, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[node name="MainScreen" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/Control"]
+margin_right = 1004.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 3 )
+text = "-Advent of Code 2020-"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Control"]
+margin_top = 69.0
+margin_right = 1004.0
+margin_bottom = 546.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 15
+custom_constants/hseparation = 15
+columns = 6
+
+[node name="DayContainer" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 154.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 1
+daySolver = ExtResource( 4 )
+
+[node name="DayContainer2" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 169.0
+margin_right = 323.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 2
+
+[node name="DayContainer3" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_right = 492.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 3
+
+[node name="DayContainer4" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 507.0
+margin_right = 661.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 4
+
+[node name="DayContainer5" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 676.0
+margin_right = 830.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 5
+
+[node name="DayContainer6" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 845.0
+margin_right = 999.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 6
+
+[node name="DayContainer7" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 123.0
+margin_right = 154.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 7
+
+[node name="DayContainer8" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 169.0
+margin_top = 123.0
+margin_right = 323.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 8
+
+[node name="DayContainer9" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_top = 123.0
+margin_right = 492.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 9
+
+[node name="DayContainer10" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 507.0
+margin_top = 123.0
+margin_right = 661.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 10
+
+[node name="DayContainer11" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 676.0
+margin_top = 123.0
+margin_right = 830.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 11
+
+[node name="DayContainer12" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 845.0
+margin_top = 123.0
+margin_right = 999.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 12
+
+[node name="DayContainer13" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 246.0
+margin_right = 154.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 13
+
+[node name="DayContainer14" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 169.0
+margin_top = 246.0
+margin_right = 323.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 14
+
+[node name="DayContainer15" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_top = 246.0
+margin_right = 492.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 15
+
+[node name="DayContainer16" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 507.0
+margin_top = 246.0
+margin_right = 661.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 16
+
+[node name="DayContainer17" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 676.0
+margin_top = 246.0
+margin_right = 830.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 17
+
+[node name="DayContainer18" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 845.0
+margin_top = 246.0
+margin_right = 999.0
+margin_bottom = 354.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 18
+
+[node name="DayContainer19" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 369.0
+margin_right = 154.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 19
+
+[node name="DayContainer20" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 169.0
+margin_top = 369.0
+margin_right = 323.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 20
+
+[node name="DayContainer21" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_top = 369.0
+margin_right = 492.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 21
+
+[node name="DayContainer22" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 507.0
+margin_top = 369.0
+margin_right = 661.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 22
+
+[node name="DayContainer23" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 676.0
+margin_top = 369.0
+margin_right = 830.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 23
+
+[node name="DayContainer24" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 845.0
+margin_top = 369.0
+margin_right = 999.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dayNumber = 24
+
+[node name="AnswerLine" type="HBoxContainer" parent="MarginContainer/Control"]
+margin_top = 556.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="Label" type="Label" parent="MarginContainer/Control/AnswerLine"]
+margin_top = 5.0
+margin_right = 51.0
+margin_bottom = 19.0
+text = "Answer:"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Control/AnswerLine"]
+margin_left = 55.0
+margin_right = 928.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "TestString"
+editable = false
+
+[node name="ClipboardButton" type="Button" parent="MarginContainer/Control/AnswerLine"]
+margin_left = 932.0
+margin_right = 1004.0
+margin_bottom = 24.0
+text = "Clipboard"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 461.0
+margin_top = 280.0
+margin_right = 562.0
+margin_bottom = 319.0
+custom_fonts/font = SubResource( 1 )
+text = "Copied!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer"]
+anims/Show = SubResource( 2 )
+[connection signal="pressed" from="MarginContainer/Control/AnswerLine/ClipboardButton" to="." method="_on_ClipboardButton_pressed"]
