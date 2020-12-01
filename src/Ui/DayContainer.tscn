@@ -21,6 +21,7 @@ margin_right = 1024.0
 margin_bottom = 297.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
+disabled = true
 text = "Day 1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,6 +33,7 @@ margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
+disabled = true
 text = "Bonus"
 __meta__ = {
 "_edit_use_anchors_": false

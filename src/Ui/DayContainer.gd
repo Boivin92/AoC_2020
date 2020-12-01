@@ -2,16 +2,16 @@ extends VBoxContainer
 
 export (int) var dayNumber : int
 export (Script) var daySolver
-export (bool) var bonusSolved : bool
 
 signal answered(answer)
 
 func _ready():
 	$DayButton.text = "Day " + str(dayNumber)
-	$DayButton.disabled = true if not daySolver else false
-	$BonusButton.disabled = true if not bonusSolved else false
 	if daySolver:
+		$DayButton.disabled = false
 		daySolver = daySolver.new()
+		if daySolver.bonusSolved:
+			$BonusButton.disabled = false
 
 
 func _on_DayButton_pressed():

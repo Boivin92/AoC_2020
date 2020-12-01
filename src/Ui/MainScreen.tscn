@@ -113,7 +113,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 dayNumber = 1
 daySolver = ExtResource( 4 )
-bonusSolved = true
 
 [node name="DayContainer2" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -376,7 +375,7 @@ margin_left = 55.0
 margin_right = 928.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
-text = "TestString"
+text = "Click on a button to see the answer!"
 editable = false
 
 [node name="ClipboardButton" type="Button" parent="MarginContainer/Control/AnswerLine"]

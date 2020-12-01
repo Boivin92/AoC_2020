@@ -2,6 +2,7 @@ extends Node
 class_name Solver
 
 var inputFileName
+var bonusSolved : bool = false
 
 func load_data():
 	var file = File.new()

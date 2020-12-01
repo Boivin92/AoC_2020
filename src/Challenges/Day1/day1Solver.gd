@@ -3,7 +3,8 @@ extends Solver
 func _init():
 	#FILENAME ONLY INCLUDING EXTENSION
 	#MUST BE IN Folder "res://Challenges/Inputs/"
-	inputFileName = "Day1.txt"; 
+	inputFileName = "Day1.txt"
+	bonusSolved = true 
 
 func solve_challenge() -> String:
 	var objective := 2020
