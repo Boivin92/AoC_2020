@@ -5,18 +5,17 @@
 [ext_resource path="res://Ui/DayContainer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Challenges/Day1/day1Solver.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 48
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Show"
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:modulate:r")
@@ -91,7 +90,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="MarginContainer/Control"]
 margin_right = 1004.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "-Advent of Code 2020-"
 align = 1
 
@@ -114,6 +113,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 dayNumber = 1
 daySolver = ExtResource( 4 )
+bonusSolved = true
 
 [node name="DayContainer2" parent="MarginContainer/Control/GridContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -399,9 +399,9 @@ margin_left = 461.0
 margin_top = 280.0
 margin_right = 562.0
 margin_bottom = 319.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Copied!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer"]
-anims/Show = SubResource( 2 )
+anims/Show = SubResource( 3 )
 [connection signal="pressed" from="MarginContainer/Control/AnswerLine/ClipboardButton" to="." method="_on_ClipboardButton_pressed"]
