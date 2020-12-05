@@ -1,13 +1,13 @@
 extends Solver
 
-func _init():
-	#FILENAME ONLY INCLUDING EXTENSION
-	#MUST BE IN Folder "res://Challenges/Inputs/"
-	inputFileName = "Day1.txt"
-	bonusSolved = true 
+const TARGET_NUMBER : int = 2020
 
-func solve_challenge() -> String:
-	var objective := 2020
+func _ready():
+	bonusSolved = true 
+	dayAnswer = "692916"
+	bonusAnswer = "289270976"
+
+func _solve_challenge() -> String:
 	var data : PoolStringArray = load_data()
 	var dataAsNumbers : PoolIntArray
 	for line in data:
@@ -17,13 +17,12 @@ func solve_challenge() -> String:
 			if dataAsNumbers[i] == dataAsNumbers[j]:
 				continue
 			else:
-				if dataAsNumbers[i] + dataAsNumbers[j] == objective:
+				if dataAsNumbers[i] + dataAsNumbers[j] == TARGET_NUMBER:
 					return str(dataAsNumbers[i]*dataAsNumbers[j])
 		
 	return ":("
 
-func solve_bonus() -> String:
-	var objective := 2020
+func _solve_bonus() -> String:
 	var data : PoolStringArray = load_data()
 	var dataAsNumbers : PoolIntArray
 	for line in data:
@@ -34,6 +33,6 @@ func solve_bonus() -> String:
 				if i == j or j == k or i == k:
 					continue
 				else:
-					if dataAsNumbers[i] + dataAsNumbers[j] + dataAsNumbers[k] == objective:
+					if dataAsNumbers[i] + dataAsNumbers[j] + dataAsNumbers[k] == TARGET_NUMBER:
 						return str(dataAsNumbers[i]*dataAsNumbers[j]*dataAsNumbers[k])
 	return ":("

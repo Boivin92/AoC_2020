@@ -1,13 +1,12 @@
 extends Solver
 
-func _init():
-	#FILENAME ONLY INCLUDING EXTENSION
-	#MUST BE IN Folder "res://Challenges/Inputs/"
-	inputFileName = ""
-	bonusSolved = false #set to true once bonus is solved, yo 
+func _ready():
+	bonusSolved = false
+#	dayAnswer = ""
+#	bonusAnswer = ""
 
-func solve_challenge() -> String:
+func _solve_challenge() -> String:
 	return ""
 
-func solve_bonus() -> String:
+func _solve_bonus() -> String:
 	return ""

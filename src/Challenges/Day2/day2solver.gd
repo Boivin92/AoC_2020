@@ -1,19 +1,18 @@
 extends Solver
 
-func _init():
-	#FILENAME ONLY INCLUDING EXTENSION
-	#MUST BE IN Folder "res://Challenges/Inputs/"
-	inputFileName = "Day2.txt"
-	bonusSolved = true #set to true once bonus is solved, yo 
+func _ready():
+	bonusSolved = true
+	dayAnswer = "556"
+	bonusAnswer = "605"
 
-func solve_challenge() -> String:
+func _solve_challenge() -> String:
 	var data = load_data()
 	var validNumber : int
 	for line in data:
 		validNumber += is_password_valid_sled(line)
 	return str(validNumber)
 
-func solve_bonus() -> String:
+func _solve_bonus() -> String:
 	var data = load_data()
 	var validNumber : int
 	for line in data:

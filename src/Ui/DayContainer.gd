@@ -9,15 +9,19 @@ func _ready():
 	$DayButton.text = "Day " + str(dayNumber)
 	if daySolver:
 		$DayButton.disabled = false
-		daySolver = daySolver.new()
-		if daySolver.bonusSolved:
+		var solver : Solver = daySolver.new()
+		solver.inputFileName = "Day" + str(dayNumber) + ".txt"
+		solver.name = "daySolver"
+		add_child(solver)
+		if $daySolver.bonusSolved:
 			$BonusButton.disabled = false
 
 
 func _on_DayButton_pressed():
-	var answer = daySolver.solve_challenge()
-	emit_signal("answered", answer)
+	if $daySolver:
+		emit_signal("answered", $daySolver.get_answer())
 
 
 func _on_BonusButton_pressed():
-	emit_signal("answered", daySolver.solve_bonus())
+	if $daySolver:
+		emit_signal("answered", $daySolver.get_bonus_answer())

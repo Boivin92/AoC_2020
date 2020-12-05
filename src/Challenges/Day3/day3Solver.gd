@@ -1,29 +1,35 @@
 extends Solver
 
-func _init():
-	#FILENAME ONLY INCLUDING EXTENSION
-	#MUST BE IN Folder "res://Challenges/Inputs/"
-	inputFileName = "Day3.txt"
-	bonusSolved = true #set to true once bonus is solved, yo 
+const ANGLES := [	Vector2(1,1), 
+					Vector2(1,3), 
+					Vector2(1,5), 
+					Vector2(1,7), 
+					Vector2(2,1)]
 
-func solve_challenge() -> String:
-	return str(number_of_trees(1,3))
+const FOREST_WIDTH = 31
 
-func solve_bonus() -> String:
-	return str(number_of_trees(1,1)*
-	number_of_trees(1,3)*
-	number_of_trees(1,5)*
-	number_of_trees(1,7)*
-	number_of_trees(2,1))
+func _ready():
+	bonusSolved = true
+	dayAnswer = "276"
+	bonusAnswer = "7812180000"
 
-func number_of_trees(down, right):
+func _solve_challenge() -> String:
+	return str(trees_for_angle(1,3))
+
+func _solve_bonus() -> String:
+	var result = 1
+	for angle in ANGLES:
+		result = result * trees_for_angle(angle.x, angle.y)
+	return str(result)
+
+func trees_for_angle(down : int, right: int):
 	var data = load_data()
-	var lenght = 31
 	var currentPosition = right
 	var numberOfTrees = 0
-	range(down, data.size(), down)
+	
 	for i in range(down, data.size(), down):
 		if data[i][currentPosition] == "#":
 			numberOfTrees+=1
-		currentPosition = (currentPosition + right) % lenght
+		currentPosition = (currentPosition + right) % FOREST_WIDTH
+	
 	return numberOfTrees

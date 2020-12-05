@@ -1,8 +1,13 @@
 extends Node
 class_name Solver
 
-var inputFileName
+const ERROR_FORMAT = "ERROR: Answer %s differs from known answer %s"
+
+var inputFileName : String
 var bonusSolved : bool = false
+
+var dayAnswer : String
+var bonusAnswer : String
 
 func load_data():
 	var file = File.new()
@@ -11,8 +16,24 @@ func load_data():
 	file.close()
 	return content.split("\n")
 
-func solve_challenge() -> String:
+
+func get_answer():
+	var answer = _solve_challenge()
+	if dayAnswer:
+		if dayAnswer != answer:
+			return ERROR_FORMAT % [answer, dayAnswer]
+	return answer
+
+func get_bonus_answer():
+	var answer = _solve_bonus()
+	if bonusAnswer:
+		if bonusAnswer != answer:
+			return ERROR_FORMAT % [answer, bonusAnswer]
+	return answer
+
+
+func _solve_challenge() -> String:
 	return ""
 
-func solve_bonus() -> String:
+func _solve_bonus() -> String:
 	return ""
