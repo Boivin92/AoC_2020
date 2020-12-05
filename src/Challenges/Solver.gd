@@ -9,6 +9,8 @@ var bonusSolved : bool = false
 var dayAnswer : String
 var bonusAnswer : String
 
+var elapsedTime : float = 0
+
 func load_data():
 	var file = File.new()
 	file.open("res://Challenges/Inputs/" + inputFileName, File.READ)
@@ -18,14 +20,18 @@ func load_data():
 
 
 func get_answer():
+	var start_time = OS.get_ticks_msec()
 	var answer = _solve_challenge()
+	elapsedTime = OS.get_ticks_msec() - start_time
 	if dayAnswer:
 		if dayAnswer != answer:
 			return ERROR_FORMAT % [answer, dayAnswer]
 	return answer
 
 func get_bonus_answer():
+	var start_time = OS.get_ticks_msec()
 	var answer = _solve_bonus()
+	elapsedTime = OS.get_ticks_msec() - start_time
 	if bonusAnswer:
 		if bonusAnswer != answer:
 			return ERROR_FORMAT % [answer, bonusAnswer]

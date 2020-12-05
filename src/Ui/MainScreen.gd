@@ -9,5 +9,6 @@ func _on_ClipboardButton_pressed():
 	OS.set_clipboard($MarginContainer/Control/AnswerLine/LineEdit.text)
 	$CenterContainer/AnimationPlayer.play("Show")
 
-func _on_answer_given(answer):
+func _on_answer_given(answer, time):
 	$MarginContainer/Control/AnswerLine/LineEdit.text = answer
+	$MarginContainer/Control/AnswerLine/LineEdit2.text = str(time) + "ms"
