@@ -18,7 +18,7 @@ func solve_bonus() -> String:
 	var passports = load_passports()
 	var i = 0
 	for p in passports:
-		if p.has_all_values() and p.is_valid():
+		if p.is_valid():
 			i += 1
 	return str(i)
 
