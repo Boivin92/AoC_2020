@@ -23,12 +23,11 @@ func _solve_bonus() -> String:
 	return str(result)
 
 func trees_for_angle(down : int, right: int):
-	var data = load_data()
 	var currentPosition = right
 	var numberOfTrees = 0
 	
-	for i in range(down, data.size(), down):
-		if data[i][currentPosition] == "#":
+	for i in range(down, inputData.size(), down):
+		if inputData[i][currentPosition] == "#":
 			numberOfTrees+=1
 		currentPosition = (currentPosition + right) % FOREST_WIDTH
 	

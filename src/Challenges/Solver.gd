@@ -9,7 +9,11 @@ var bonusSolved : bool = false
 var dayAnswer : String
 var bonusAnswer : String
 
-var elapsedTime : float = 0
+var elapsedTime : int = 0
+var startTime : int
+var endTime : int
+
+var inputData
 
 func load_data():
 	var file = File.new()
@@ -19,24 +23,30 @@ func load_data():
 	return content.split("\n")
 
 
-func get_answer():
-	var start_time = OS.get_ticks_msec()
+func get_answer(custom_inputs = null):
+	pre_solve(custom_inputs)
 	var answer = _solve_challenge()
-	elapsedTime = OS.get_ticks_msec() - start_time
-	if dayAnswer:
-		if dayAnswer != answer:
-			return ERROR_FORMAT % [answer, dayAnswer]
-	return answer
+	return post_solve(dayAnswer, answer)
 
-func get_bonus_answer():
-	var start_time = OS.get_ticks_msec()
+func get_bonus_answer(custom_inputs = null):
+	pre_solve(custom_inputs)
 	var answer = _solve_bonus()
-	elapsedTime = OS.get_ticks_msec() - start_time
-	if bonusAnswer:
-		if bonusAnswer != answer:
-			return ERROR_FORMAT % [answer, bonusAnswer]
-	return answer
+	return post_solve(bonusAnswer, answer)
 
+func pre_solve(custom_inputs = null):
+	if custom_inputs:
+		inputData = custom_inputs.split("\n")
+	else:
+		inputData = load_data()
+	startTime = OS.get_ticks_msec()
+
+func post_solve(expected, actual):
+	endTime = OS.get_ticks_msec()
+	elapsedTime = endTime - startTime
+	if expected:
+		if expected != actual:
+			return ERROR_FORMAT % [actual, expected]
+	return actual
 
 func _solve_challenge() -> String:
 	return ""

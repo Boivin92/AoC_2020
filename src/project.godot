@@ -53,6 +53,10 @@ config/name="AdventOfCode2020"
 run/main_scene="res://Ui/MainScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global/Global.tscn"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "WAT" )

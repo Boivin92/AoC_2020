@@ -6,16 +6,14 @@ func _ready():
 	bonusAnswer = "605"
 
 func _solve_challenge() -> String:
-	var data = load_data()
 	var validNumber : int
-	for line in data:
+	for line in inputData:
 		validNumber += is_password_valid_sled(line)
 	return str(validNumber)
 
 func _solve_bonus() -> String:
-	var data = load_data()
 	var validNumber : int
-	for line in data:
+	for line in inputData:
 		validNumber += is_password_valid_tobbogan(line)
 	return str(validNumber)
 

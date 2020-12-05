@@ -22,10 +22,9 @@ func _solve_bonus() -> String:
 	return str(i)
 
 func load_passports() -> Array:
-	var data = load_data()
 	var passports := []
 	passports.append(Passport.new())
-	for line in data:
+	for line in inputData:
 		if line == "":
 			passports.append(Passport.new())
 		else:
