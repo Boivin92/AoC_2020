@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "BoardingPass",
+"language": "GDScript",
+"path": "res://Challenges/Day5/BoardingPass.gd"
+}, {
+"base": "Node",
 "class": "Passport",
 "language": "GDScript",
 "path": "res://Challenges/Day4/passport.gd"
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://addons/WAT/core/test/test.gd"
 } ]
 _global_script_class_icons={
+"BoardingPass": "",
 "Passport": "",
 "Solver": "",
 "WAT": "",
