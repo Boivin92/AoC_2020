@@ -21,7 +21,7 @@ const CODE_TO_FULLNAME_MAP := {
 			"hgt" : "Height", 
 			"hcl" : "HairColor", 
 			"ecl" : "EyeColor", 
-			"pid": "PassportId", 
+			"pid" : "PassportId", 
 			"cid" : "CountryId"}
 
 func filter_line(line):
