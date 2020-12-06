@@ -6,22 +6,19 @@ func _ready():
 	bonusAnswer = "3039"
 
 func _solve_challenge() -> String:
-	var declarations = create_declarations()
-	
-	var total = 0
-	for d in declarations:
-		total += d.get_total_anyone()
-	
-	return str(total)
+	return str(count_for_method("get_total_anyone"))
 
 func _solve_bonus() -> String:
+	return str(count_for_method("get_total_everyone"))
+
+func count_for_method(method):
 	var declarations = create_declarations()
 	
 	var total = 0
 	for d in declarations:
-		total += d.get_total_everyone()
+		total += d.call(method)
 	
-	return str(total)
+	return total
 
 func create_declarations():
 	var declarations := []
