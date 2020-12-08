@@ -1,9 +1,9 @@
 extends Panel
 
 onready var Confirmation = $ConfirmationDialog
-onready var AnswerLine = $MarginContainer/Control/AnswerLine/LineEdit
-onready var TimeLine = $MarginContainer/Control/AnswerLine/LineEdit2
-onready var Grid = $MarginContainer/Control/GridContainer
+onready var AnswerLine = $Margin/Content/AnswerLine/AnswerText
+onready var TimeLine = $Margin/Content/AnswerLine/TimeText
+onready var Grid = $Margin/Content/CalendarGrid
 onready var ToastAnimation = $CenterContainer/AnimationPlayer
 
 func _ready():
