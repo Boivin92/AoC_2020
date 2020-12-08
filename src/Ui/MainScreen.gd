@@ -4,7 +4,7 @@ onready var Confirmation = $ConfirmationDialog
 onready var AnswerLine = $Margin/Content/AnswerLine/AnswerText
 onready var TimeLine = $Margin/Content/AnswerLine/TimeText
 onready var Grid = $Margin/Content/CalendarGrid
-onready var ToastAnimation = $CenterContainer/AnimationPlayer
+onready var ToastAnimation = $CenterContainer/ToastAnimationPlayer
 
 func _ready():
 	for child in Grid.get_children():
