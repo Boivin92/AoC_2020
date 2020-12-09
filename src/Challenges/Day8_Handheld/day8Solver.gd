@@ -15,10 +15,9 @@ func _solve_bonus() -> String:
 		if inputData[i].substr(0,3) == "nop":
 			inputData[i] = inputData[i].replace("nop", "jmp")
 			var result = machine(inputData)
+			inputData[i] = lineCopy
 			if result[0]:
 				return str(result[1])
-			else:
-				inputData[i] = lineCopy
 				
 		elif inputData[i].substr(0,3) == "jmp":
 			inputData[i] = inputData[i].replace("jmp", "nop")

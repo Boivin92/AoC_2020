@@ -9,6 +9,7 @@ func setup(newSolver, newMethod):
 	if newSolver != solver:
 		$TextEdit.text = ""
 		solver = newSolver
+	method = newMethod
 
 func _on_ConfirmationDialog_confirmed():
 	emit_signal("custom_answer", solver.call(method, $TextEdit.text), solver.elapsedTime)

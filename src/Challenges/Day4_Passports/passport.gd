@@ -32,7 +32,6 @@ func filter_line(line):
 			set(CODE_TO_FULLNAME_MAP[keyValue[0]], keyValue[1])
 
 func has_all_values():
-	var i = 0
 	return 	BirthYear and \
 			IssueYear and \
 			ExpirationYear and \

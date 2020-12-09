@@ -8,7 +8,7 @@ func _ready():
 	bonusAnswer = "289270976"
 
 func _solve_challenge() -> String:
-	var dataAsNumbers : PoolIntArray
+	var dataAsNumbers : PoolIntArray = PoolIntArray()
 	for line in inputData:
 		dataAsNumbers.append(int(line))
 	for i in dataAsNumbers.size():
@@ -22,7 +22,7 @@ func _solve_challenge() -> String:
 	return ":("
 
 func _solve_bonus() -> String:
-	var dataAsNumbers : PoolIntArray
+	var dataAsNumbers : PoolIntArray = PoolIntArray()
 	for line in inputData:
 		dataAsNumbers.append(int(line))
 	for i in dataAsNumbers.size():

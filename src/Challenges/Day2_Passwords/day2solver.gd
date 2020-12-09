@@ -6,20 +6,20 @@ func _ready():
 	bonusAnswer = "605"
 
 func _solve_challenge() -> String:
-	var validNumber : int
+	var validNumber : int = 0
 	for line in inputData:
 		validNumber += is_password_valid_sled(line)
 	return str(validNumber)
 
 func _solve_bonus() -> String:
-	var validNumber : int
+	var validNumber : int = 0
 	for line in inputData:
 		validNumber += is_password_valid_tobbogan(line)
 	return str(validNumber)
 
 func is_password_valid_sled(line: String):
 	var values = dict_that_shit(line)
-	var numberOfTimes : int
+	var numberOfTimes : int = 0
 	for letter in values.password:
 		if letter == values.key:
 			numberOfTimes += 1
