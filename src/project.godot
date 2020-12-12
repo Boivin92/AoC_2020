@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://Challenges/Day04_Passports/passport.gd"
 }, {
 "base": "Node",
+"class": "SeatLayout",
+"language": "GDScript",
+"path": "res://Challenges/Day11_Seating/SeatLayout.gd"
+}, {
+"base": "Node",
 "class": "Solver",
 "language": "GDScript",
 "path": "res://Challenges/Solver.gd"
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "BoardingPass": "",
 "GroupDeclaration": "",
 "Passport": "",
+"SeatLayout": "",
 "Solver": ""
 }
 
