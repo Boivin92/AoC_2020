@@ -1,6 +1,11 @@
 extends Node
 class_name SeatLayout
 
+const DIRECTIONS := [
+	Vector2(-1,-1), Vector2(-1,0), Vector2(-1,1),
+	Vector2(0,-1), Vector2(0,1), 
+	Vector2(1,-1), Vector2(1,0), Vector2(1,1)]
+
 var CurrentLayout := []
 var Y_SIZE := 0
 var X_SIZE := 0
@@ -40,10 +45,6 @@ func process_tile(position : Vector2, lineOfSight):
 			var status = status_line_of_sight(position) if lineOfSight else seat_status(position)
 			return "#" if status == "QUIET" else "L"
 
-const DIRECTIONS := [
-	Vector2(-1,-1), Vector2(-1,0), Vector2(-1,1),  	#X-1
-	Vector2(0,-1), Vector2(0,1), 					#X
-	Vector2(1,-1), Vector2(1,0), Vector2(1,1)]	#X+1
 
 func seat_status(position : Vector2):
 	var number = 0
